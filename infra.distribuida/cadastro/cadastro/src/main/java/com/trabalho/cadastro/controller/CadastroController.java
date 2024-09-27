@@ -1,4 +1,10 @@
-package com.trabalho.cadastro.CadastroController;
+package com.trabalho.cadastro.controller;
+
+import com.trabalho.cadastro.model.Usuario;
+import com.trabalho.cadastro.service.CadastroService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/cadastrar")
