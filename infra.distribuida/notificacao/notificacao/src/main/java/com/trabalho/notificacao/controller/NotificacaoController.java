@@ -13,19 +13,24 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
 @RestController
 @RequestMapping("/notificar")
 public class NotificacaoController {
 
-    private final RabbitTemplate rabbitTemplate;
+     private final RabbitTemplate rabbitTemplate;
 
     public NotificationController(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    @PostMapping
-    public ResponseEntity<String> notificar(@RequestBody PaymentRequest paymentRequest) {
+    @PostMapping("/notificar")
+    public String notificar(@RequestBody PaymentRequest paymentRequest) {
         rabbitTemplate.convertAndSend("notificacoes", paymentRequest);
-        return new ResponseEntity<>("Notificação Enviada", HttpStatus.OK);
+        return "Notificação de pagamento recebida e enviada para RabbitMQ.";
     }
 }
