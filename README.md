@@ -13,6 +13,12 @@ Função: Este microserviço recebe as notificações de pagamento do Microservi
 
 - Docker e Docker Compose instalados.
 
+ ## Acessando o RabbitMQ
+acessar a interface de gerenciamento do rabbitMQ em http://localhost:15672:
+
+Usuário: guest
+Senha: guest
+
 ## Como Subir os Serviços
 
 1. Clone o repositório.
@@ -26,8 +32,4 @@ Construir o JAR:
 ```bash
 mvn clean package
 
-## Acessando o RabbitMQ
-Você pode acessar a interface de gerenciamento do RabbitMQ em http://localhost:15672 com as credenciais padrão:
 
-Usuário: guest
-Senha: guest
