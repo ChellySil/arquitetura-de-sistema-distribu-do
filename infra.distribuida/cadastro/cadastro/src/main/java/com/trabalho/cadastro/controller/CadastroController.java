@@ -26,7 +26,7 @@ import org.springframework.web.client.RestTemplate;
 public class CadastroController {
 
    @Autowired
-    private RestTemplate restTemplate; // Usado para chamar o microserviço 2
+    private RestTemplate restTemplate; 
 
     @PostMapping("/pagar")
     public ResponseEntity<String> pagar(@RequestBody PaymentRequest paymentRequest) {
