@@ -13,6 +13,31 @@ Função: Este microserviço recebe as notificações de pagamento do Microservi
 
 - Docker e Docker Compose instalados.
 
+
+## Acessando os Microserviços
+Microserviço 1 (Cadastro):
+
+Endpoint: http://localhost:8080/pagar
+Método: POST
+Corpo da Requisição (JSON):
+json
+{
+  "descricao": "Pagamento de teste",
+  "valor": 100.00
+}
+
+
+Microserviço 2 (Notificações):
+
+Endpoint: http://localhost:8081/notificar
+Método: POST
+Corpo da Requisição (JSON):
+json
+
+{
+  "descricao": "Pagamento de teste",
+  "valor": 100.00
+}
  ## Acessando o RabbitMQ
 acessar a interface de gerenciamento do rabbitMQ em http://localhost:15672:
 
@@ -31,5 +56,6 @@ Senha: guest
 Construir o JAR:
 ```bash
 mvn clean package
+
 
 
