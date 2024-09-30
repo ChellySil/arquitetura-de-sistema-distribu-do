@@ -8,7 +8,7 @@ services:
   
   microservico_cadastro:
     build:
-      context: ./microservico_cadastro
+      context: ./cadastro
     ports:
       - "8081:8080"
     depends_on:
@@ -16,7 +16,7 @@ services:
   
   microservico_notificacao:
     build:
-      context: ./microservico_notificacao
+      context: ./notificacao
     ports:
       - "8082:8080"
     depends_on:
