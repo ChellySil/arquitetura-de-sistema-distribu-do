@@ -6,16 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import org.springframework.web.client.RestTemplate;
+
 @RestController
-@RequestMapping("/cadastrar")
+@RequestMapping("/pagar")
 public class CadastroController {
 
     @Autowired
-    private CadastroService cadastroService;
+    private RestTemplate restTemplate;
 
     @PostMapping
-    public ResponseEntity<String> cadastrar(@RequestBody Usuario usuario) {
-        cadastroService.cadastrarUsuario(usuario);
-        return ResponseEntity.ok("Usuário cadastrado com sucesso");
+    public ResponseEntity<String> pagar(@RequestBody PaymentRequest paymentRequest) {
+        ResponseEntity<String> response = restTemplate.postForEntity(
+                "http://microservice2:5001/notificar", paymentRequest, String.class);
+        return new ResponseEntity<>("Pagamento Processado: " + response.getBody(), HttpStatus.OK);
     }
 }
