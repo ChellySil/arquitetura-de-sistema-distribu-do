@@ -25,3 +25,9 @@ Função: Este microserviço recebe as notificações de pagamento do Microservi
 Construir o JAR:
 ```bash
 mvn clean package
+
+## Acessando o RabbitMQ
+Você pode acessar a interface de gerenciamento do RabbitMQ em http://localhost:15672 com as credenciais padrão:
+
+Usuário: guest
+Senha: guest
