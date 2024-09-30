@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: microservice1
+  cloud:
+    loadbalancer:
+      enabled: false
+
+rest:
+  template:
+    connection-timeout: 5000
+    read-timeout: 5000
