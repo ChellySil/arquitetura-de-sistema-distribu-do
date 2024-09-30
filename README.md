@@ -17,3 +17,6 @@ Este projeto consiste em dois microserviços implementados em Java Spring, onde:
 
    ```bash
    docker-compose up --build
+## Maven
+Construir o JAR:
+```mvn clean package
