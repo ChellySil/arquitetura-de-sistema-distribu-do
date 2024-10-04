@@ -1,0 +1,4 @@
+com\trabalho\pagar\PagarApplication.class
+com\trabalho\pagar\model\PaymentRequest.class
+com\trabalho\pagar\Controller\PagarController.class
+com\trabalho\pagar\config\RabbitConfig.class
